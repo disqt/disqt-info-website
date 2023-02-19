@@ -34,7 +34,7 @@ function display(json) {
         html += `
                 <tr>
                     <td class="servers lit-pink">${keys[i]}</td>
-                    <td class="lit-${color} status">${status}<br><input class="server-url" value="${url}"></td>
+                    <td class="lit-${color} status">${status}<br><a class="server-url" href="${url}">${url}</td>
                 </tr>
                 `
     }
@@ -55,7 +55,7 @@ function addCopyEvents(){
             // link.setSelectionRange(0, link.value.length);
             // document.execCommand("copy");
             // console.log("copié!");
-            copyHttps(link.value);
+            copyHttps(link.innerText);
         })
     })
 }
