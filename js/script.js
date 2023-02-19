@@ -46,7 +46,7 @@ function display(json) {
 infoserv();
 
 function addCopyEvents(){
-    let links = Array.from(document.getElementsByTagName("input"));
+    let links = Array.from(document.getElementsByTagName("a"));
 
     links.forEach(link =>{
         link.addEventListener("click", function(e){
