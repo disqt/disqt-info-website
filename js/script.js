@@ -1,7 +1,7 @@
 let container = document.getElementById("content");
 
 async function infoserv() {
-    let url = "http://disqt.com/servers",
+    let url = "https://disqt.com/servers",
         response = await fetch(url),
         json;
 
@@ -24,7 +24,7 @@ function display(json) {
             url = json[keys[i]].Url;
 
         if (json[keys[i]].Running == true) {
-            color = "blue";
+            color = "green";
             status = "ON";
         } else {
             color = "pink";
@@ -34,13 +34,37 @@ function display(json) {
         html += `
                 <tr>
                     <td class="servers lit-pink">${keys[i]}</td>
-                    <td class="lit-${color} status">${status}<br><a class="server-url lit-blue" href="${url}">${url}</a></td>
+                    <td class="lit-${color} status">${status}<br><input class="server-url" value="${url}"></td>
                 </tr>
                 `
     }
-
-
     container.innerHTML = html;
+    addCopyEvents();
 }
 
+// exécution de la fonction
 infoserv();
+
+function addCopyEvents(){
+    let links = Array.from(document.getElementsByTagName("input"));
+
+    links.forEach(link =>{
+        link.addEventListener("click", function(e){
+            e.preventDefault();
+            // méthode de copie dépreciée
+            // link.setSelectionRange(0, link.value.length);
+            // document.execCommand("copy");
+            // console.log("copié!");
+            copyHttps(link.value);
+        })
+    })
+}
+
+
+function copyHttps(text) {
+    navigator.clipboard.writeText(text).then(function () {
+        console.log('Async: Copying to clipboard was successful!');
+    }, function (err) {
+        console.error('Async: Could not copy text: ', err);
+    });
+}

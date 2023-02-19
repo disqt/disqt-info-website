@@ -85,15 +85,18 @@ table {
         inset 0 0 20px rgba(0, 136, 255, 0.6);
 }
 
-thead, tbody { display: block; }
+thead,
+tbody {
+    display: block;
+}
 
 thead tr {
     /* fallback */
     width: 97%;
     /* minus scroll bar width */
     width: -webkit-calc(100% - 16px);
-    width:    -moz-calc(100% - 16px);
-    width:         calc(100% - 16px);
+    width: -moz-calc(100% - 16px);
+    width: calc(100% - 16px);
     margin: 0;
     padding: 1rem;
     text-align: center;
@@ -101,7 +104,8 @@ thead tr {
 }
 
 
-tr:after {  /* clearing float */
+tr:after {
+    /* clearing float */
     content: ' ';
     display: block;
     visibility: hidden;
@@ -142,12 +146,20 @@ td {
 
 }
 
-a.server-url {
+.server-url {
     font-size: 0.6rem;
+    background-color: transparent;
+    border: none;
+    text-align: right;
+    color: rgb(255, 202, 245);
+    text-decoration: underline;
+    box-shadow:
+        0 0 2px rgba(0, 136, 255, 0.6),
+        0 0 5px rgba(0, 136, 255, 0.6),
+        0 0 7px rgba(0, 136, 255, 0.6),
 }
 
 .lit-pink {
-
     color: rgb(255, 202, 245);
     text-shadow: 0 0 5px rgba(255, 68, 221, 0.9), 0 0 15px rgba(255, 68, 221, 0.9), 0 0 20px rgba(255, 68, 221, 0.9), 0 0 40px rgba(255, 68, 221, 0.9),
         0 0 60px rgba(255, 68, 221, 0.4), 0 0 10px rgba(255, 68, 221, 0.7), 0 0 98px rgba(255, 68, 221, 0.4);
@@ -157,6 +169,13 @@ a.server-url {
     color: rgb(255, 202, 245);
     text-shadow: 0 0 5px rgba(0, 136, 255, 0.9), 0 0 15px rgba(0, 136, 255, 0.9), 0 0 20px rgba(0, 136, 255, 0.9), 0 0 40px rgba(0, 136, 255, 0.9),
         0 0 60px rgba(0, 136, 255, 0.4), 0 0 10px rgba(0, 136, 255, 0.7), 0 0 98px rgba(0, 136, 255, 0.4);
+}
+
+.lit-green {
+    color: rgb(255, 202, 245);
+    text-shadow: 0 0 5px rgba(0, 255, 21, 0.9), 0 0 15px rgba(0, 255, 21, 0.9), 0 0 20px rgba(0, 255, 21, 0.9), 0 0 40px rgba(0, 255, 21, 0.9),
+        0 0 60px rgba(0, 255, 21, 0.4), 0 0 10px rgba(0, 255, 21, 0.7), 0 0 98px rgba(0, 255, 21, 0.4);
+
 }
 
 h1:hover {
