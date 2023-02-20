@@ -54,9 +54,8 @@ function addCopyEvents() {
     links.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
-            // link.classList.add("flicker");
             flickering(link);
-            // copyHttps(link.innerText);
+            copyHttps(link.innerText);
         })
     })
 }
