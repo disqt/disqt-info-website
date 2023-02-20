@@ -125,7 +125,7 @@ tr:after {
 }
 
 tbody {
-    height: 450px;
+    height: 360px;
     overflow-y: auto;
     overflow-x: hidden;
     text-align: center;
