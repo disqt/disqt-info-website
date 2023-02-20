@@ -5,21 +5,23 @@ async function infoserv() {
         response = await fetch(url),
         json;
 
-    console.log(response)
     if (response.ok) {
         json = await response.json();
-        console.log(json);
     } else {
         console.log("HTTP-Error: " + response.status);
     }
     display(json);
 }
 
+// exécution de la fonction principale
+infoserv();
+
+
+// fonction de construction du HTML à injecter
 function display(json) {
     let html = "";
 
     for (var i = 0, keys = Object.keys(json), ii = keys.length; i < ii; i++) {
-        console.log('key : ' + keys[i] + ' val : ' + json[keys[i]].Running);
         let color, status,
             url = json[keys[i]].Url;
 
@@ -39,32 +41,39 @@ function display(json) {
                 `
     }
     container.innerHTML = html;
+    
+    // une fois que le texte est injecté, les évènements pour copier au clique sont ajoutés
     addCopyEvents();
 }
 
-// exécution de la fonction
-infoserv();
 
-function addCopyEvents(){
-    let links = Array.from(document.getElementsByTagName("a"));
+// fonction d'ajout d'évènements sur les liens injectés
+function addCopyEvents() {
+    let links = Array.from(document.getElementsByClassName("server-url"));
 
-    links.forEach(link =>{
-        link.addEventListener("click", function(e){
+    links.forEach(link => {
+        link.addEventListener("click", function (e) {
             e.preventDefault();
-            // méthode de copie dépreciée
-            // link.setSelectionRange(0, link.value.length);
-            // document.execCommand("copy");
-            // console.log("copié!");
-            copyHttps(link.innerText);
+            // link.classList.add("flicker");
+            flickering(link);
+            // copyHttps(link.innerText);
         })
     })
 }
 
-
+// fonction de stockage d'une string dans le presse papier
 function copyHttps(text) {
     navigator.clipboard.writeText(text).then(function () {
         console.log('Async: Copying to clipboard was successful!');
     }, function (err) {
         console.error('Async: Could not copy text: ', err);
     });
+}
+
+function flickering(element){
+    if(element.classList.contains("flicker")){
+        element.classList.remove("flicker");
+    } else {
+        element.classList.add("flicker");
+    }
 }
