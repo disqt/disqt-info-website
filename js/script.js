@@ -21,7 +21,9 @@ infoserv();
 function display(json) {
     let html = "";
 
-    for (var i = 0, keys = Object.keys(json), ii = keys.length; i < ii; i++) {
+    const keys = Object.keys(json)
+    
+    for (let i = 0; i < keys.length; i++) {
         let color, status,
             url = json[keys[i]].Url;
 
@@ -35,7 +37,7 @@ function display(json) {
 
         html += `
                 <tr>
-                    <td class="servers lit-pink">${keys[i]}</td>
+                    <td class="servers lit-${color}">${keys[i]}</td>
                     <td class="lit-${color} status">${status}<br><a class="server-url" href="${url}">${url}</td>
                 </tr>
                 `
