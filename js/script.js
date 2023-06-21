@@ -37,7 +37,7 @@ function display(json) {
 
         html += `
                 <tr>
-                    <td class="servers lit-pink">${keys[i]}</td>
+                    <td class="servers lit-${color}">${keys[i]}</td>
                     <td class="lit-${color} status">${status}<br><a class="server-url" href="${url}">${url}</td>
                 </tr>
                 `
