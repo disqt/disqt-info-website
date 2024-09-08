@@ -22,6 +22,8 @@ function display(json) {
     let html = "";
 
     const keys = Object.keys(json)
+
+    console.log(keys);
     
     for (let i = 0; i < keys.length; i++) {
         let color, status,
@@ -41,16 +43,17 @@ function display(json) {
                     <td class="servers lit-${color}"><a href="https://disqt.com/map">${keys[i]}</a></td>
                     <td class="lit-${color} status">${status}<br><a class="server-url" href="${url}">${url}</td>
                 </tr>
-                `
+                `;
         } else {
             html += `
                 <tr>
                     <td class="servers lit-${color}">${keys[i]}</td>
                     <td class="lit-${color} status">${status}<br><a class="server-url" href="${url}">${url}</td>
                 </tr>
-                `
+                `;
         }
     }
+    
     container.innerHTML = html;
     
     // une fois que le texte est injecté, les évènements pour copier au clique sont ajoutés
