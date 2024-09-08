@@ -35,7 +35,7 @@ function display(json) {
             status = "OFF";
         }
 
-        if (json[keys[i]=="Minecraft") {
+        if (keys[i]=="Minecraft") {
             html += `
                 <tr>
                     <td class="servers lit-${color}"><a href"https://disqt.com/map">${keys[i]}</a></td>
