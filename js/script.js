@@ -23,12 +23,12 @@ function display(json) {
 
     const keys = Object.keys(json)
 
-    console.log(keys);
+    console.log(json[keys]);
     
     for (let i = 0; i < keys.length; i++) {
         let color, status,
             url = json[keys[i]].Url;
-
+        console.log(json[keys[i]]
         if (json[keys[i]].Running == true) {
             color = "green";
             status = "ON";
