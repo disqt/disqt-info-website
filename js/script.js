@@ -38,7 +38,7 @@ function display(json) {
         if (keys[i]=="Minecraft") {
             html += `
                 <tr>
-                    <td class="servers lit-${color}"><a href"https://disqt.com/map">${keys[i]}</a></td>
+                    <td class="servers lit-${color}"><a href="https://disqt.com/map">${keys[i]}</a></td>
                     <td class="lit-${color} status">${status}<br><a class="server-url" href="${url}">${url}</td>
                 </tr>
                 `
