@@ -42,14 +42,14 @@ function display(json) {
                     <td class="lit-${color} status">${status}<br><a class="server-url" href="${url}">${url}</td>
                 </tr>
                 `
-        }
-        
-        html += `
+        } else {
+            html += `
                 <tr>
                     <td class="servers lit-${color}">${keys[i]}</td>
                     <td class="lit-${color} status">${status}<br><a class="server-url" href="${url}">${url}</td>
                 </tr>
                 `
+        }
     }
     container.innerHTML = html;
     
