@@ -23,14 +23,12 @@ function display(json) {
 
     const keys = Object.keys(json)
 
-    console.log(json[keys]);
-    
     for (let i = 0; i < keys.length; i++) {
         let color, status,
             url = json[keys[i]].Url;
-        
+
         console.log(json[keys[i]]);
-        
+
         if (json[keys[i]].Running == true) {
             color = "green";
             status = "ON";
@@ -39,25 +37,17 @@ function display(json) {
             status = "OFF";
         }
 
-        if (keys[i]=="Minecraft") {
-            html += `
-                <tr>
-                    <td class="servers lit-${color}"><a href="https://disqt.com/map">${keys[i]}</a></td>
-                    <td class="lit-${color} status">${status}<br><a class="server-url" href="${url}">${url}</td>
-                </tr>
-                `;
-        } else {
-            html += `
-                <tr>
-                    <td class="servers lit-${color}">${keys[i]}</td>
-                    <td class="lit-${color} status">${status}<br><a class="server-url" href="${url}">${url}</td>
-                </tr>
-                `;
-        }
+        html += `
+            <tr>
+                <td class="servers lit-${color}"><a href="${keys[i].Redirect ? keys[i].Redirect : ""}">${keys[i]}</a></td>
+                <td class="lit-${color} status">${status}<br><a class="server-url" href="${url}">${url}</td>
+                <td class="lit-${color}">${keys[i].Players ? (keys[i].Players + "/" + keys[i].MaxPlayers) : ""}</td>
+            </tr>
+            `;
     }
-    
+
     container.innerHTML = html;
-    
+
     // une fois que le texte est injecté, les évènements pour copier au clique sont ajoutés
     addCopyEvents();
 }
@@ -85,8 +75,8 @@ function copyHttps(text) {
     });
 }
 
-function flickering(element){
-    if(element.classList.contains("flicker")){
+function flickering(element) {
+    if (element.classList.contains("flicker")) {
         element.classList.remove("flicker");
     } else {
         element.classList.add("flicker");

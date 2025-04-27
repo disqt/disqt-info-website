@@ -115,13 +115,17 @@ thead tr {
     margin: 0.5rem;
 }
 
+thead tr td {
+    text-align: right;
+}
+
 thead tr td:first-of-type {
     text-align: left;
 }
 
-thead tr td:last-of-type {
+/* thead tr td:last-of-type {
     text-align: right;
-}
+} */
 
 tr:after {
     /* clearing float */
@@ -154,7 +158,7 @@ tr td:first-of-type {
     text-align: left;
 }
 
-tr td:last-of-type {
+tr td {
     text-align: right;
 }
 
@@ -228,7 +232,7 @@ h1:hover {
 }
 
 .servers:hover {
-    animation: flickerOn 500ms ease-in 0s infinite;
+    animation: flickerOn 1000ms ease-in 0s 1;
 }
 
 /* #endregion */
