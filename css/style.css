@@ -123,10 +123,6 @@ thead tr td:first-of-type {
     text-align: left;
 }
 
-/* thead tr td:last-of-type {
-    text-align: right;
-} */
-
 tr:after {
     /* clearing float */
     content: ' ';
@@ -216,7 +212,7 @@ tr td {
         0 0 60px rgba(0, 136, 255, 0.4), 0 0 10px rgba(0, 136, 255, 0.7), 0 0 98px rgba(0, 136, 255, 0.4);
 }
 
-.lit-green {
+.lit-green * {
     color: rgb(255, 202, 245);
     text-shadow: 0 0 5px rgba(0, 255, 21, 0.9), 0 0 15px rgba(0, 255, 21, 0.9), 0 0 20px rgba(0, 255, 21, 0.9), 0 0 40px rgba(0, 255, 21, 0.9),
         0 0 60px rgba(0, 255, 21, 0.4), 0 0 10px rgba(0, 255, 21, 0.7), 0 0 98px rgba(0, 255, 21, 0.4);
@@ -232,7 +228,7 @@ h1:hover {
 }
 
 .servers:hover {
-    animation: flickerOn 1000ms ease-in 0s 1;
+    animation: flickerOn 500ms ease-in 0s 1;
 }
 
 /* #endregion */
