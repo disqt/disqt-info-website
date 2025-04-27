@@ -40,8 +40,8 @@ function display(json) {
         html += `
             <tr>
                 <td class="servers lit-${color}"><a href="${keys[i].Redirect ? keys[i].Redirect : ""}">${keys[i]}</a></td>
+                <td class="lit-${color}">${keys[i].MaxPlayers ? (keys[i].Players + "/" + keys[i].MaxPlayers) : ""}</td>
                 <td class="lit-${color} status">${status}<br><a class="server-url" href="${url}">${url}</td>
-                <td class="lit-${color}">${keys[i].Players ? (keys[i].Players + "/" + keys[i].MaxPlayers) : ""}</td>
             </tr>
             `;
     }
